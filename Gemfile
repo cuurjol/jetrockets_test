@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker'
   gem 'pry-rails'
   gem 'rubocop'
 end
