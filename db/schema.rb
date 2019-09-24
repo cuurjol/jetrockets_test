@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_080451) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["guest_team_id"], name: "index_matches_on_guest_team_id"
+    t.index ["home_team_id", "guest_team_id"], name: "index_matches_on_home_team_id_and_guest_team_id", unique: true
     t.index ["home_team_id"], name: "index_matches_on_home_team_id"
     t.index ["name"], name: "index_matches_on_name", unique: true
   end
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_09_21_080451) do
     t.datetime "updated_at", null: false
     t.index ["achievement_id"], name: "index_ratings_on_achievement_id"
     t.index ["match_id"], name: "index_ratings_on_match_id"
+    t.index ["player_id", "achievement_id", "match_id"], name: "index_ratings_on_player_id_and_achievement_id_and_match_id", unique: true
     t.index ["player_id"], name: "index_ratings_on_player_id"
   end
 

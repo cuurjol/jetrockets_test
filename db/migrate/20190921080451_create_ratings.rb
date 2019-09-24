@@ -7,5 +7,6 @@ class CreateRatings < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_index :ratings, %i[player_id achievement_id match_id], unique: true
   end
 end

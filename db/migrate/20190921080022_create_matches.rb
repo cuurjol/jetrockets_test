@@ -9,5 +9,6 @@ class CreateMatches < ActiveRecord::Migration[5.2]
       t.timestamps
     end
     add_index :matches, :name, unique: true
+    add_index :matches, %i[home_team_id guest_team_id], unique: true
   end
 end
