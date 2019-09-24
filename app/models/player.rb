@@ -17,7 +17,7 @@ class Player < ApplicationRecord
     Rating.create(player: self, achievement: achievement, match: match)
   end
 
-  def check_achievement_last_five_matches(achievement)
+  def got_achievement_last_five_matches?(achievement)
     last_five_matches_ids = team.all_matches.last(5).pluck(:id)
     ratings.where(achievement_id: achievement.id, match_id: last_five_matches_ids).count >= 1
   end
