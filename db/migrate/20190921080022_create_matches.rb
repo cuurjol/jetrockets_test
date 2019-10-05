@@ -3,7 +3,7 @@ class CreateMatches < ActiveRecord::Migration[5.2]
     create_table :matches do |t|
       t.string :name
       t.string :city
-      t.references :home_team, foreign_key: false
+      t.references :home_team, foreign_key: false, index: false
       t.references :guest_team, foreign_key: false
 
       t.timestamps
